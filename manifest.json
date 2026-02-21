@@ -36,11 +36,19 @@
         "https://*/*",
         "http://*/*"
       ]
+    },
+    {
+      "run_at" : "document_start",
+      "js": ["src/content/hide-youtube-shorts.js"],
+      "matches": [
+        "https://www.youtube.com/*"
+      ]
     }
   ],
   "permissions": [
     "tabs",
-    "scripting"
+    "scripting",
+    "storage"
   ],
   "host_permissions": [
     "https://*/*",

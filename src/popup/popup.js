@@ -1,3 +1,16 @@
+// --- YT short to Video toggle ---
+const ytShortCheckbox = document.getElementById('ytShortToVideo');
+
+// Load saved state
+chrome.storage.local.get('ytShortToVideo', (data) => {
+  ytShortCheckbox.checked = !!data.ytShortToVideo;
+});
+
+// Persist on change
+ytShortCheckbox.addEventListener('change', () => {
+  chrome.storage.local.set({ ytShortToVideo: ytShortCheckbox.checked });
+});
+
 // this code will bind the modifyDOM function to the btnShowOrangeDiv click event
 document.getElementById('btnShowOrangeDiv').addEventListener('click', function() {
   chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
