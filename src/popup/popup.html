@@ -2,13 +2,29 @@
 <html>
 <head>
   <style>
-    body { width: 200px; padding: 10px; }
+    body { width: 200px; padding: 10px; font-family: sans-serif; }
     button { width: 100%; padding: 10px; }
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 10px 0;
+    }
+    .toggle-row label {
+      cursor: pointer;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
-  <button id="btnShowOrangeDiv">Click this button to add an orange div to the page</button>
-  <p>(I am in "popup.html")</p>  
+  <div class="toggle-row">
+    <input type="checkbox" id="yt-short-to-video" />
+    <label for="yt-short-to-video">YT short to Video</label>
+  </div>
+  <div class="toggle-row">
+    <input type="checkbox" id="yt-hide-shorts" />
+    <label for="yt-hide-shorts">Hide YT Shorts</label>
+  </div>
   <script src="popup.js"></script>
 </body>
 </html>
