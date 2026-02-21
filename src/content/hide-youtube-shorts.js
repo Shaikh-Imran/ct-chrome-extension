@@ -6,22 +6,13 @@ function hideShorts() {
   chrome.storage.local.get('yt-hide-shorts', (data) => {
     if (!data['yt-hide-shorts']) return;
 
-    // Selectors for Shorts elements on YouTube
-    const selectors = [
-      'ytd-rich-shelf-renderer[is-shorts]', // Shorts shelf on home
-      'ytd-reel-shelf-renderer', // Shorts reel shelf
-      'ytd-mini-guide-entry-renderer a[title="Shorts"]', // Shorts in mini sidebar
-      'ytd-guide-entry-renderer a[title="Shorts"]', // Shorts in full sidebar
-    ];
-
-    selectors.forEach((selector) => {
-      document.querySelectorAll(selector).forEach((el) => {
-        const target = el.closest(
-          'ytd-rich-shelf-renderer, ytd-reel-shelf-renderer, ytd-mini-guide-entry-renderer, ytd-guide-entry-renderer',
-        );
-        if (target) target.style.display = 'none';
-      });
-    });
+    [
+      "ytd-playlist-thumbnail", // mixed item
+      "ytd-reel-shelf-renderer", // reel section
+      "ytd-rich-section-renderer", // Trending
+      // "ytd-rich-grid-renderer" // shorts
+      // "ytd-shelf-renderer", // top news in search
+    ].forEach((q) => document.querySelectorAll(q).forEach((e) => e.style.display = 'none'));
   });
 }
 
