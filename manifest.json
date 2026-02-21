@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "Dev Tool - CodersTea",
-  "description": "Various handy tools for developers.",
+  "name": "My Tools - CodersTea",
+  "description": "Various handy tools for me.",
   "homepage_url": "https://coderstea.in",
   "version": "0.0.1",
   "action": {
