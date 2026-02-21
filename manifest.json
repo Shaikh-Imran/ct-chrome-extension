@@ -24,35 +24,20 @@
   },
   "content_scripts": [
     {
-      "run_at" : "document_start",
+      "run_at": "document_start",
       "js": ["src/content/before.js"],
-      "matches": [
-        "https://*/*",
-        "http://*/*"
-      ]
+      "matches": ["https://*/*", "http://*/*"]
     },
     {
-      "run_at" : "document_idle",
+      "run_at": "document_idle",
       "js": ["src/content/after.js"],
-      "matches": [
-        "https://*/*",
-        "http://*/*"
-      ]
+      "matches": ["https://*/*", "http://*/*"]
     },
     {
       "js": ["src/content/hide-youtube-shorts.js"],
-      "matches": [
-        "*://*.youtube.com/*"
-      ]
+      "matches": ["*://*.youtube.com/*"]
     }
   ],
-  "permissions": [
-    "tabs",
-    "scripting",
-    "storage"
-  ],
-  "host_permissions": [
-    "https://*/*",
-    "http://*/*"
-  ]
+  "permissions": ["tabs", "scripting", "storage"],
+  "host_permissions": ["https://*/*", "http://*/*"]
 }
