@@ -1,6 +1,5 @@
 (function () {
   redirectShorts();
-  hideShorts();
 })();
 
 function hideShorts() {
