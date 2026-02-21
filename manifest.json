@@ -40,10 +40,9 @@
       ]
     },
     {
-      "run_at" : "document_start",
       "js": ["src/content/hide-youtube-shorts.js"],
       "matches": [
-        "https://www.youtube.com/*"
+        "*://*.youtube.com/*"
       ]
     }
   ],

@@ -10,3 +10,16 @@ chrome.storage.local.get('yt-short-to-video', (data) => {
 ytShortCheckbox.addEventListener('change', () => {
   chrome.storage.local.set({ 'yt-short-to-video': ytShortCheckbox.checked });
 });
+
+// --- Hide YT Shorts toggle ---
+const ytHideShortsCheckbox = document.getElementById('yt-hide-shorts');
+
+// Load saved state
+chrome.storage.local.get('yt-hide-shorts', (data) => {
+  ytHideShortsCheckbox.checked = !!data['yt-hide-shorts'];
+});
+
+// Persist on change
+ytHideShortsCheckbox.addEventListener('change', () => {
+  chrome.storage.local.set({ 'yt-hide-shorts': ytHideShortsCheckbox.checked });
+});
