@@ -34,7 +34,7 @@
       "matches": ["https://*/*", "http://*/*"]
     },
     {
-      "run_at": "document_start",
+      "run_at": "document_end",
       "js": ["src/content/hide-youtube-shorts.js"],
       "matches": ["*://*.youtube.com/*"]
     }

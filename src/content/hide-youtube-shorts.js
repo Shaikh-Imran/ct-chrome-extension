@@ -1,5 +1,18 @@
 (function () {
   redirectShorts();
+  hideShorts();
+  var bodyList = document.querySelector('body');
+  var observer = new MutationObserver(function (mutations) {
+    mutations.forEach((_mutation) => {
+      redirectShorts();
+      hideShorts();
+    });
+  });
+  var config = {
+    childList: true,
+    subtree: true,
+  };
+  observer.observe(bodyList, config);
 })();
 
 function hideShorts() {
@@ -25,19 +38,19 @@ function redirectShorts() {
   }
 }
 
-window.onload = function () {
-  redirectShorts();
-  hideShorts();
-  var bodyList = document.querySelector('body');
-  var observer = new MutationObserver(function (mutations) {
-    mutations.forEach((_mutation) => {
-      redirectShorts();
-      hideShorts();
-    });
-  });
-  var config = {
-    childList: true,
-    subtree: true,
-  };
-  observer.observe(bodyList, config);
-};
+// window.onload = function () {
+//   redirectShorts();
+//   hideShorts();
+//   var bodyList = document.querySelector('body');
+//   var observer = new MutationObserver(function (mutations) {
+//     mutations.forEach((_mutation) => {
+//       redirectShorts();
+//       hideShorts();
+//     });
+//   });
+//   var config = {
+//     childList: true,
+//     subtree: true,
+//   };
+//   observer.observe(bodyList, config);
+// };
