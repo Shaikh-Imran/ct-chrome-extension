@@ -34,10 +34,14 @@
       "matches": ["https://*/*", "http://*/*"]
     },
     {
+      "run_at": "document_start",
       "js": ["src/content/hide-youtube-shorts.js"],
       "matches": ["*://*.youtube.com/*"]
     }
   ],
-  "permissions": ["tabs", "scripting", "storage"],
+  "background": {
+    "service_worker": "src/background/background.js"
+  },
+  "permissions": ["tabs", "scripting", "storage", "webNavigation"],
   "host_permissions": ["https://*/*", "http://*/*"]
 }
